@@ -17,9 +17,13 @@
         <a-asset-item id="scenem" src="assets/scene.gltf"></a-asset-item>
       </a-assets>
       -->
+      <a-assets>
+        <a-asset-item id="object" src="models/pokeball-vray.obj"></a-asset-item>
+        <a-asset-item id="material" src="models/pokeball-vray.mtl"></a-asset-item>
+      </a-assets>
       <!-- use your gltf model -->
-      <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-
+      <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
+      <a-obj-model src="#object" mtl="#material"></a-obj-model>
 <!--       <a-entity obj-model="obj: ##temple; mtl: ##materia"></a-entity -->
        <!-- <a-entity gltf-model="#scenem"></a-entity> -->
       <!-- create your content here. just a box for now -->

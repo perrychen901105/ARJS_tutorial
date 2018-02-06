@@ -10,12 +10,13 @@
     <!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script> -->
     <!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
     <script src="js/aframe-ar.js"></script>
+    <script src="js/EventHandler.js"></script>
     <!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script> -->
 
   </head>
   <body style='margin : 0px; overflow: hidden;'>
-    <!-- <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'> -->
-    <a-scene arjs="debugUIEnabled: false;">
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+    
       <!-- define your gltf asset --> 
       <!--    
       <a-assets>
@@ -39,16 +40,27 @@
       <!-- <a-sphere position='0 0.5 0' material='opacity: 0.5;'></a-sphere> -->
       <!-- define a camera which will move according to the marker position -->
       <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
-      <a-obj-model src="#object" mtl="#material" scale="0.05 0.05 0.05" position="0 0 10"></a-obj-model> 
-      <a-marker-camera preset='custom' type='pattern' url='./assets/pattern-marker.patt'></a-marker-camera> 
+      <!-- <a-obj-model src="#object" mtl="#material" color="#FF0000" scale="0.02 0.02 0.02" position="0 0 0" rotation="-90 0 0"></a-obj-model> --> 
+      <!-- <a-marker-camera preset='custom' type='pattern' url='./assets/pattern-marker.patt'></a-marker-camera> --> 
       
 
 
-      <!-- <a-marker type='pattern' url='assets/pattern-marker.patt'> -->
-        <!-- <a-obj-model src="#object" mtl="#material" scale="0.002 0.002 0.002" position="0 1 -1"></a-obj-model>
+      <a-marker preset='custom' type='pattern' url='./assets/pattern-marker.patt'>
+        <a-obj-model class="link" src="#object" mtl="#material" color="#FF0000" scale="0.02 0.02 0.02" position="0 0 0" rotation="-90 0 0" changescene__click="event: click; linkto: page">
+          
+        </a-obj-model>
       </a-marker>
 
-      <a-entity camera></a-entity> -->
+      <a-entity camera>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          fuse="true"
+          raycaster="objects: .link">
+        </a-cursor>
+      </a-entity>
 
 
 

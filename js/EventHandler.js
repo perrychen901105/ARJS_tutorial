@@ -1,3 +1,5 @@
+import 'aframe-mouse-cursor-component'
+
 AFRAME.registerComponent('hello', {
   schema: {
     event: {type: 'string', default: ''},
@@ -46,18 +48,12 @@ AFRAME.registerComponent('changescene', {
   update: function () {
     var data = this.data;
     var el = this.el;
-    console.log(data.event);
-    console.log(el);
     if (data.event) {
+      console.log("googd");
       el.addEventListener(data.event, function () {
         console.log("click successful");
-        // window.location.href = "../singlePage.html";
-        // window.history.replaceState({}, "page 2", "http://127.0.0.1:7000/singlePage.html")
         alert("clicked");
-
       });
-
-      // console.log(window.location);
     }
   }
 });

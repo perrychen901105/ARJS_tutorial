@@ -1,5 +1,3 @@
-import 'aframe-mouse-cursor-component'
-
 AFRAME.registerComponent('hello', {
   schema: {
     event: {type: 'string', default: ''},

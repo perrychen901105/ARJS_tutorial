@@ -24,7 +24,7 @@
       <a-assets>
         <a-asset-item id="object" src="models/VW Golf VII GTI 5door 2014.obj"></a-asset-item>
         <a-asset-item id="material" src="models/VW Golf VII GTI 5door 2014.mtl"></a-asset-item>
-        <video id="video" autoplay loop="true" position="-2 -2 -2" src="video/Video.mp4" webkit-playsinline>
+        <!-- <video id="video" autoplay loop="true" position="-2 -2 -2" src="video/Video.mp4" webkit-playsinline> -->
       </a-assets>
       <!-- use your gltf model -->
       <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
@@ -48,7 +48,7 @@
 
       <a-marker preset='custom' type='pattern' url='./assets/pattern-marker.patt'>
           <a-obj-model  src="#object" mtl="#material" color="#FF0000" scale="0.02 0.02 0.02" position="0 0 0" rotation="-90 0 0"></a-obj-model>
-          <a-video class="link" src="#video" width="16" height="9" position="0 1 1" changescene__click="event: click; linkto: page"></a-video>
+          <!-- <a-video class="link" src="#video" width="16" height="9" position="0 1 1" changescene__click="event: click; linkto: page"></a-video> -->
       </a-marker>
 
       <a-entity position="0 0 0">
